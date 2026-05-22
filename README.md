@@ -1,4 +1,7 @@
-# Project2
+# BLØØD WEB APP
+
+<img width="1920" height="1080" alt="Blood_banner_rojo_venom" src="https://github.com/user-attachments/assets/d20a1e97-b87b-499a-8b49-fe1bec861e34" />
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
 
