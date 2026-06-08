@@ -1,101 +1,68 @@
-/* =========================
-   BASE
-========================= */
-
-body {
-    background: #000;
+.texto-blanco{
     color: white;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-.texto-blanco {
-    color: white;
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar-brand {
+.navbar-brand{
     font-weight: bold;
 }
 
-/* =========================
-   TITULOS
-========================= */
-
-.title {
+.title{
     font-size: 2.5rem;
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    color: white;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     text-align: center;
-    letter-spacing: 1px;
 }
 
-/* =========================
-   TEXTO GENERAL (DESKTOP)
-========================= */
+html{
+    scroll-behavior: smooth;
+}
 
-p {
+p{
     text-align: justify;
     max-width: 800px;
     margin: auto;
     line-height: 1.8;
-    font-size: 1.05rem;
-    color: #d6d6d6;
+    font-size: 1.1rem;
 }
 
-/* =========================
-   SECCIONES
-========================= */
-
-section {
-    min-height: auto;
-    padding: 80px 0;
-}
-
-/* =========================
-   CAROUSEL / BANNERS
-========================= */
-
-.carousel-item img {
-    height: 400px;
+.carousel-item img{
+    height: 71vh;
     object-fit: cover;
 }
 
-.banner-extra {
-    height: 400px;
-    object-fit: cover;
-}
 
-/* =========================
-   IFRAME
-========================= */
-
-iframe {
+iframe{
     border-radius: 15px;
 }
 
-/* =========================
-   CONTACTO
-========================= */
-
-#contacto img {
-    transition: transform 0.3s ease;
+body{
+    background: #000;
+    color: white;
 }
 
-#contacto img:hover {
-    transform: scale(1.12);
+
+section{
+   min-height:auto;
+   padding:80px 0;
 }
 
-/* =========================
-   FOOTER
-========================= */
+
+#contacto img{
+    transition: transform 0.3s;
+}
+
+#contacto img:hover{
+    transform: scale(1.15);
+}
+
+.carousel-item img,
+.banner-extra{
+    height: 400px;
+    object-fit: cover;
+}
 
 .footer {
     background: #000;
@@ -110,53 +77,11 @@ iframe {
     text-align: center;
 }
 
-/* BRAND CON FLICKER + GLOW */
 .footer-brand {
     font-size: 2rem;
     letter-spacing: 4px;
     color: #8b0000;
     margin-bottom: 10px;
-    text-align: center;
-
-    text-shadow:
-        0 0 5px rgba(139,0,0,0.5),
-        0 0 10px rgba(139,0,0,0.4);
-
-    animation: flicker 3s infinite;
-}
-
-@keyframes flicker {
-
-    0% {
-        opacity: 1;
-        text-shadow:
-            0 0 5px rgba(139,0,0,0.4),
-            0 0 10px rgba(139,0,0,0.3);
-    }
-
-    3% { opacity: 0.4; }
-    6% { opacity: 1; }
-    7% { opacity: 0.2; }
-    9% { opacity: 1; }
-    12% { opacity: 0.6; }
-
-    20% {
-        opacity: 1;
-        text-shadow:
-            0 0 10px rgba(139,0,0,0.6),
-            0 0 25px rgba(139,0,0,0.4);
-    }
-
-    50% {
-        opacity: 1;
-        text-shadow:
-            0 0 15px rgba(139,0,0,0.7),
-            0 0 35px rgba(139,0,0,0.5);
-    }
-
-    52% { opacity: 0.5; }
-    54% { opacity: 1; }
-    100% { opacity: 1; }
 }
 
 .footer-tagline {
@@ -191,19 +116,15 @@ iframe {
     color: #666;
 }
 
-/* =========================
-   MÓVIL (FIX BIOGRAFÍA)
-========================= */
+.footer-brand {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #8b0000;
+    margin-bottom: 10px;
 
-@media (max-width: 768px) {
-
-    /* BIO + TEXTO MÁS LEGIBLE EN MÓVIL */
-    p {
-        color: #ffffff;
-    }
-
-    .carousel-item img,
-    .banner-extra {
-        height: 300px;
-    }
+    text-shadow:
+        0 0 5px rgba(139,0,0,0.5),
+        0 0 10px rgba(139,0,0,0.4),
+        0 0 20px rgba(139,0,0,0.3);
 }
+
