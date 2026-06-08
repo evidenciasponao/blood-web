@@ -1,68 +1,103 @@
-.texto-blanco{
-    color: white;
-}
+/* =========================
+   BASE
+========================= */
 
-.navbar-brand{
-    font-weight: bold;
-}
-
-.title{
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-p{
-    text-align: justify;
-    max-width: 800px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-.carousel-item img{
-    height: 71vh;
-    object-fit: cover;
-}
-
-
-iframe{
-    border-radius: 15px;
-}
-
-body{
+body {
     background: #000;
     color: white;
 }
 
-
-section{
-   min-height:auto;
-   padding:80px 0;
+html {
+    scroll-behavior: smooth;
 }
 
-
-#contacto img{
-    transition: transform 0.3s;
+/* texto genérico */
+.texto-blanco {
+    color: white;
 }
 
-#contacto img:hover{
-    transform: scale(1.15);
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar-brand {
+    font-weight: bold;
 }
 
-.carousel-item img,
-.banner-extra{
+/* =========================
+   TITULOS
+   (MEJORADO: antes estaba invertido blanco/negro raro)
+========================= */
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   TEXTO GENERAL
+========================= */
+
+p {
+    text-align: justify;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #d6d6d6;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+    min-height: auto;
+    padding: 80px 0;
+}
+
+/* =========================
+   CAROUSEL / BANNERS
+========================= */
+
+.carousel-item img {
     height: 400px;
     object-fit: cover;
 }
+
+.banner-extra {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* =========================
+   IFRAME
+========================= */
+
+iframe {
+    border-radius: 15px;
+}
+
+/* =========================
+   CONTACTO HOVER
+========================= */
+
+#contacto img {
+    transition: transform 0.3s ease;
+}
+
+#contacto img:hover {
+    transform: scale(1.12);
+}
+
+/* =========================
+   FOOTER (MEJORADO + GLOW)
+========================= */
 
 .footer {
     background: #000;
@@ -77,11 +112,32 @@ section{
     text-align: center;
 }
 
+/* BRAND CON GLOW */
 .footer-brand {
     font-size: 2rem;
     letter-spacing: 4px;
     color: #8b0000;
     margin-bottom: 10px;
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(139,0,0,0.6);
+    animation: glowRed 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowRed {
+    0% {
+        text-shadow:
+            0 0 5px rgba(139,0,0,0.4),
+            0 0 10px rgba(139,0,0,0.3),
+            0 0 15px rgba(139,0,0,0.2);
+    }
+
+    100% {
+        text-shadow:
+            0 0 10px rgba(139,0,0,0.7),
+            0 0 20px rgba(139,0,0,0.5),
+            0 0 35px rgba(139,0,0,0.4);
+    }
 }
 
 .footer-tagline {
