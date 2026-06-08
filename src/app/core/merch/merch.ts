@@ -50,6 +50,15 @@ export class Merch {
       size: 'S • M • L • XL',
       description: 'Limited edition hoodie with red logo artwork.'
     }
+    ,
+
+    {
+      name: 'Gorra Blood Legacy',
+      price: '$120.000 COP',
+      image: 'images/gorra.png',
+      size: 'Unica',
+      description: 'Limited edition hoodie with red logo artwork.'
+    }
 
   ];
 
