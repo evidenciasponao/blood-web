@@ -13,7 +13,7 @@ export class Merch {
 
     {
       name: 'Blood Black Edition',
-      price: '$120.000 COP',
+      price: '$70.000 COP',
       image: 'images/negro.png',
       size: 'S • M • L • XL',
       description: 'Premium black hoodie featuring the official Blood logo.'
@@ -21,7 +21,7 @@ export class Merch {
 
     {
       name: 'Blood Death Edition',
-      price: '$130.000 COP',
+      price: '$70.000 COP',
       image: 'images/death.png',
       size: 'S • M • L • XL',
       description: 'Exclusive design inspired by the band visual identity.'
@@ -29,7 +29,7 @@ export class Merch {
 
     {
       name: 'Blood Legacy',
-      price: '$130.000 COP',
+      price: '$70.000 COP',
       image: 'images/legacy.png',
       size: 'S • M • L • XL',
       description: 'Premium collector edition hoodie.'
@@ -37,7 +37,7 @@ export class Merch {
 
     {
       name: 'Blood White Edition',
-      price: '$130.000 COP',
+      price: '$70.000 COP',
       image: 'images/blanco.png',
       size: 'S • M • L • XL',
       description: 'Premium collector edition hoodie.'
@@ -45,7 +45,7 @@ export class Merch {
 
     {
       name: 'Blood Red Logo',
-      price: '$120.000 COP',
+      price: '$70.000 COP',
       image: 'images/rojo.png',
       size: 'S • M • L • XL',
       description: 'Limited edition hoodie with red logo artwork.'
@@ -54,7 +54,7 @@ export class Merch {
 
     {
       name: 'Gorra Blood Legacy',
-      price: '$120.000 COP',
+      price: '$50.000 COP',
       image: 'images/gorra.png',
       size: 'Unica',
       description: 'Limited edition hoodie with red logo artwork.'
