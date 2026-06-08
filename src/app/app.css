@@ -128,3 +128,73 @@ section{
         0 0 20px rgba(139,0,0,0.3);
 }
 
+/* hero section */
+.hero-pro {
+    background: #000;
+    padding: 140px 20px 90px;
+    text-align: center;
+    position: relative;
+}
+
+/* línea minimal superior */
+.hero-line {
+    width: 80px;
+    height: 2px;
+    background: #8b0000;
+    margin: 0 auto 25px;
+    box-shadow: 0 0 10px rgba(139,0,0,0.6);
+}
+
+/* nombre */
+.hero-name {
+    font-size: 5rem;
+    letter-spacing: 10px;
+    color: #8b0000;
+    margin: 0;
+
+    text-shadow:
+        0 0 8px rgba(139,0,0,0.5),
+        0 0 20px rgba(139,0,0,0.3);
+}
+
+/* subtítulo industrial */
+.hero-tag {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: #aaa;
+}
+
+/* descripción */
+.hero-desc {
+    margin-top: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #d0d0d0;
+    line-height: 1.7;
+}
+
+/* botones minimalistas */
+.hero-cta {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-cta a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #333;
+    color: #fff;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.hero-cta a:hover {
+    border-color: #8b0000;
+    color: #8b0000;
+}
