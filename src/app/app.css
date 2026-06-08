@@ -11,7 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* texto genérico */
 .texto-blanco {
     color: white;
 }
@@ -26,7 +25,6 @@ html {
 
 /* =========================
    TITULOS
-   (MEJORADO: antes estaba invertido blanco/negro raro)
 ========================= */
 
 .title {
@@ -40,7 +38,7 @@ html {
 }
 
 /* =========================
-   TEXTO GENERAL
+   TEXTO GENERAL (DESKTOP)
 ========================= */
 
 p {
@@ -84,7 +82,7 @@ iframe {
 }
 
 /* =========================
-   CONTACTO HOVER
+   CONTACTO
 ========================= */
 
 #contacto img {
@@ -96,7 +94,7 @@ iframe {
 }
 
 /* =========================
-   FOOTER (MEJORADO + GLOW)
+   FOOTER
 ========================= */
 
 .footer {
@@ -112,7 +110,7 @@ iframe {
     text-align: center;
 }
 
-/* BRAND CON GLOW */
+/* BRAND CON FLICKER + GLOW */
 .footer-brand {
     font-size: 2rem;
     letter-spacing: 4px;
@@ -120,24 +118,45 @@ iframe {
     margin-bottom: 10px;
     text-align: center;
 
-    text-shadow: 0 0 10px rgba(139,0,0,0.6);
-    animation: glowRed 2.5s ease-in-out infinite alternate;
+    text-shadow:
+        0 0 5px rgba(139,0,0,0.5),
+        0 0 10px rgba(139,0,0,0.4);
+
+    animation: flicker 3s infinite;
 }
 
-@keyframes glowRed {
+@keyframes flicker {
+
     0% {
+        opacity: 1;
         text-shadow:
             0 0 5px rgba(139,0,0,0.4),
-            0 0 10px rgba(139,0,0,0.3),
-            0 0 15px rgba(139,0,0,0.2);
+            0 0 10px rgba(139,0,0,0.3);
     }
 
-    100% {
+    3% { opacity: 0.4; }
+    6% { opacity: 1; }
+    7% { opacity: 0.2; }
+    9% { opacity: 1; }
+    12% { opacity: 0.6; }
+
+    20% {
+        opacity: 1;
         text-shadow:
-            0 0 10px rgba(139,0,0,0.7),
-            0 0 20px rgba(139,0,0,0.5),
-            0 0 35px rgba(139,0,0,0.4);
+            0 0 10px rgba(139,0,0,0.6),
+            0 0 25px rgba(139,0,0,0.4);
     }
+
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 15px rgba(139,0,0,0.7),
+            0 0 35px rgba(139,0,0,0.5);
+    }
+
+    52% { opacity: 0.5; }
+    54% { opacity: 1; }
+    100% { opacity: 1; }
 }
 
 .footer-tagline {
@@ -170,4 +189,21 @@ iframe {
     text-align: center;
     font-size: 0.85rem;
     color: #666;
+}
+
+/* =========================
+   MÓVIL (FIX BIOGRAFÍA)
+========================= */
+
+@media (max-width: 768px) {
+
+    /* BIO + TEXTO MÁS LEGIBLE EN MÓVIL */
+    p {
+        color: #ffffff;
+    }
+
+    .carousel-item img,
+    .banner-extra {
+        height: 300px;
+    }
 }
