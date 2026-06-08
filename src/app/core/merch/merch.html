@@ -1,0 +1,98 @@
+<section
+  id="merch"
+  class="merch-section">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <span class="section-badge">
+        Official Merch
+      </span>
+
+      <h2>
+        Blood Merchandise
+      </h2>
+
+      <p>
+        Support the band and wear the official collection.
+      </p>
+
+    </div>
+
+    <div class="merch-grid">
+
+      <div
+        class="merch-card"
+        *ngFor="let product of products">
+
+        <img
+          [src]="product.image"
+          [alt]="product.name"
+          (click)="openProduct(product)">
+
+        <h3>
+          {{ product.name }}
+        </h3>
+
+        <p class="price">
+          {{ product.price }}
+        </p>
+
+        <button
+          class="btn-merch"
+          (click)="openProduct(product)">
+          View Details
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Modal -->
+
+<div
+  class="modal"
+  *ngIf="selectedProduct"
+  (click)="closeProduct()">
+
+  <div
+    class="modal-content"
+    (click)="$event.stopPropagation()">
+
+    <img
+      [src]="selectedProduct.image">
+
+    <h3>
+      {{ selectedProduct.name }}
+    </h3>
+
+    <p>
+      {{ selectedProduct.description }}
+    </p>
+
+    <p>
+      <strong>Tallas:</strong>
+      {{ selectedProduct.size }}
+    </p>
+
+    <p class="price">
+      {{ selectedProduct.price }}
+    </p>
+
+    <a
+      target="_blank"
+      class="btn-whatsapp"
+      [href]="'https://wa.me/573214521011?text=Hola,%20me%20interesa%20el%20buso%20' + selectedProduct.name">
+
+      Order via WhatsApp
+
+    </a>
+
+  </div>
+
+</div>
