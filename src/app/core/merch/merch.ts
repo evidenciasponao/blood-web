@@ -20,14 +20,6 @@ export class Merch {
     },
 
     {
-      name: 'Blood Red Logo',
-      price: '$120.000 COP',
-      image: 'images/rojo.png',
-      size: 'S • M • L • XL',
-      description: 'Limited edition hoodie with red logo artwork.'
-    },
-
-    {
       name: 'Blood Death Edition',
       price: '$130.000 COP',
       image: 'images/death.png',
@@ -49,6 +41,14 @@ export class Merch {
       image: 'images/blanco.png',
       size: 'S • M • L • XL',
       description: 'Premium collector edition hoodie.'
+    },
+
+    {
+      name: 'Blood Red Logo',
+      price: '$120.000 COP',
+      image: 'images/rojo.png',
+      size: 'S • M • L • XL',
+      description: 'Limited edition hoodie with red logo artwork.'
     }
 
   ];
