@@ -63,3 +63,55 @@ section{
     height: 400px;
     object-fit: cover;
 }
+
+.footer {
+    background: #000;
+    color: #e5e5e5;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-brand {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #8b0000;
+    margin-bottom: 10px;
+}
+
+.footer-tagline {
+    text-align: center;
+    color: #999;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #8b0000;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #666;
+}
