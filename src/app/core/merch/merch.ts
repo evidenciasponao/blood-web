@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProductService } from '../services/product.service';
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'app-merch',
@@ -7,64 +9,30 @@ import { CommonModule } from '@angular/common';
   templateUrl: './merch.html',
   styleUrl: './merch.css'
 })
-export class Merch {
+export class Merch implements OnInit {
 
-  products = [
+  products: Product[] = [];
+  loading = true;
+  error = false;
+  selectedProduct: Product | null = null;
 
-    {
-      name: 'Blood Black Edition',
-      price: '$70.000 COP',
-      image: 'images/negro.png',
-      size: 'S • M • L • XL',
-      description: 'Premium black hoodie featuring the official Blood logo.'
-    },
+  constructor(private productService: ProductService) {}
 
-    {
-      name: 'Blood Death Edition',
-      price: '$70.000 COP',
-      image: 'images/death.png',
-      size: 'S • M • L • XL',
-      description: 'Exclusive design inspired by the band visual identity.'
-    },
+  ngOnInit(): void {
+    this.productService.getAll().subscribe({
+      next: (data) => {
+        this.products = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.error = true;
+        this.loading = false;
+      }
+    });
+  }
 
-    {
-      name: 'Blood Legacy',
-      price: '$70.000 COP',
-      image: 'images/legacy.png',
-      size: 'S • M • L • XL',
-      description: 'Premium collector edition hoodie.'
-    },
-
-    {
-      name: 'Blood White Edition',
-      price: '$70.000 COP',
-      image: 'images/blanco.png',
-      size: 'S • M • L • XL',
-      description: 'Premium collector edition hoodie.'
-    },
-
-    {
-      name: 'Blood Red Logo',
-      price: '$70.000 COP',
-      image: 'images/rojo.png',
-      size: 'S • M • L • XL',
-      description: 'Limited edition hoodie with red logo artwork.'
-    }
-    ,
-
-    {
-      name: 'Gorra Blood Legacy',
-      price: '$50.000 COP',
-      image: 'images/gorra.png',
-      size: 'Unica',
-      description: 'Limited edition hoodie with red logo artwork.'
-    }
-
-  ];
-
-  selectedProduct: any = null;
-
-  openProduct(product: any) {
+  openProduct(product: Product) {
     this.selectedProduct = product;
   }
 
