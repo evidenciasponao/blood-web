@@ -20,14 +20,22 @@
 
     </div>
 
-    <div class="merch-grid">
+    <div *ngIf="loading" class="loading">
+      Loading products...
+    </div>
+
+    <div *ngIf="error" class="error">
+      Error loading products.
+    </div>
+
+    <div class="merch-grid" *ngIf="!loading && !error">
 
       <div
         class="merch-card"
         *ngFor="let product of products">
 
         <img
-          [src]="product.image"
+          [src]="product.imageUrl"
           [alt]="product.name"
           (click)="openProduct(product)">
 
@@ -36,7 +44,7 @@
         </h3>
 
         <p class="price">
-          {{ product.price }}
+          {{ product.price | currency:'COP':'symbol':'1.0-0' }}
         </p>
 
         <button
@@ -65,7 +73,8 @@
     (click)="$event.stopPropagation()">
 
     <img
-      [src]="selectedProduct.image">
+      [src]="selectedProduct.imageUrl"
+      [alt]="selectedProduct.name">
 
     <h3>
       {{ selectedProduct.name }}
@@ -76,18 +85,18 @@
     </p>
 
     <p>
-      <strong>Tallas:</strong>
-      {{ selectedProduct.size }}
+      <strong>Stock:</strong>
+      {{ selectedProduct.stock }} unidades
     </p>
 
     <p class="price">
-      {{ selectedProduct.price }}
+      {{ selectedProduct.price | currency:'COP':'symbol':'1.0-0' }}
     </p>
 
-    <a
+    <a>
       target="_blank"
       class="btn-whatsapp"
-      [href]="'https://wa.me/573214521011?text=Hola,%20me%20interesa%20el%20buso%20' + selectedProduct.name">
+      [href]="'https://wa.me/573214521011?text=Hola,%20me%20interesa%20el%20producto%20' + selectedProduct.name">
 
       Order via WhatsApp
 
