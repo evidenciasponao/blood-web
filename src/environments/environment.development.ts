@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5246/api'
+  apiUrl: 'https://bloodfl-api-bvbfecd6d0etfzbq.eastus-01.azurewebsites.net/api'
 };

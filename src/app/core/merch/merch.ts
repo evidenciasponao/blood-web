@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, PLATFORM_ID, Inject, ChangeDetectorRef } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ProductService } from '../services/product.service';
 import { Product } from '../models/product.model';
 
@@ -10,26 +10,42 @@ import { Product } from '../models/product.model';
   styleUrl: './merch.css'
 })
 export class Merch implements OnInit {
-
   products: Product[] = [];
   loading = true;
   error = false;
   selectedProduct: Product | null = null;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    this.productService.getAll().subscribe({
-      next: (data) => {
-        this.products = data;
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error(err);
-        this.error = true;
-        this.loading = false;
-      }
-    });
+    console.log('isPlatformBrowser:', isPlatformBrowser(this.platformId));
+    console.log('apiUrl que se usará:', 'https://bloodfl-api-bvbfecd6d0etfzbq.eastus-01.azurewebsites.net/api/products');
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.productService.getAll().subscribe({
+        next: (data) => {
+          console.log('Productos recibidos:', data);
+          this.products = data;
+          this.loading = false;
+          this.cdr.detectChanges();
+        },
+        error: (err) => {
+          console.error('Error completo:', err);
+          console.error('Status:', err.status);
+          console.error('Message:', err.message);
+          this.error = true;
+          this.loading = false;
+          this.cdr.detectChanges();
+        }
+      });
+    } else {
+      console.log('NO es browser, SSR mode');
+      this.loading = false;
+    }
   }
 
   openProduct(product: Product) {
@@ -39,5 +55,4 @@ export class Merch implements OnInit {
   closeProduct() {
     this.selectedProduct = null;
   }
-
 }
