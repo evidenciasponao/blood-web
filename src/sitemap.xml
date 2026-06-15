@@ -1,136 +1,46 @@
-<!doctype html>
-<html lang="es">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Página de Inicio -->
+  <url>
+    <loc>https://www.blood-fl.shop/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<head>
+  <!-- Biografía -->
+  <url>
+    <loc>https://www.blood-fl.shop/#biografia</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <meta charset="utf-8">
+  <!-- Discografía -->
+  <url>
+    <loc>https://www.blood-fl.shop/#discografia</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <title>BLØØD | Death Metal Colombia | Official Website</title>
+  <!-- Merchandise / Tienda -->
+  <url>
+    <loc>https://www.blood-fl.shop/#merch</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <base href="/" />
+  <!-- Contacto -->
+  <url>
+    <loc>https://www.blood-fl.shop/#contacto</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1">
+  <!-- Ajusta las rutas anteriores (ej: /biografia) si en tu Angular usan otras como /about o /music -->
 
-  <!-- SEO -->
-
-  <meta
-    name="description"
-    content="Sitio oficial de BLØØD. Banda colombiana de Death Metal técnico. Escucha nuestra música, conoce nuestra historia y adquiere merchandise oficial.">
-
-  <meta
-    name="keywords"
-    content="BLØØD, Blood, Death Metal Colombia, Technical Death Metal, Death Metal Técnico, Banda Death Metal Colombia, Metal Colombiano, Metal Extremo Colombia, Discografía, Merchandise Oficial">
-
-  <meta
-    name="author"
-    content="BLØØD">
-
-  <meta
-    name="robots"
-    content="index, follow">
-
-  <meta
-    name="googlebot"
-    content="index, follow">
-
-  <!-- Canonical -->
-
-  <link
-    rel="canonical"
-    href="https://www.blood-fl.shop">
-
-  <!-- Open Graph (Facebook, WhatsApp, Discord, LinkedIn) -->
-
-  <meta
-    property="og:title"
-    content="BLØØD | Death Metal Colombia">
-
-  <meta
-    property="og:description"
-    content="Death Metal técnico colombiano. Explora nuestra biografía, discografía y merchandise oficial.">
-
-  <meta
-    property="og:type"
-    content="website">
-
-  <meta
-    property="og:url"
-    content="https://www.blood-fl.shop">
-
-  <meta
-    property="og:image"
-    content="https://www.blood-fl.shop/images/blood-preview.jpg">
-
-  <meta
-    property="og:image:width"
-    content="1200">
-
-  <meta
-    property="og:image:height"
-    content="630">
-
-  <meta
-    property="og:site_name"
-    content="BLØØD">
-
-  <meta
-    property="og:locale"
-    content="es_CO">
-
-  <!-- Twitter / X -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image">
-
-  <meta
-    name="twitter:title"
-    content="BLØØD | Death Metal Colombia">
-
-  <meta
-    name="twitter:description"
-    content="Death Metal técnico colombiano. Música, discografía y merchandise oficial.">
-
-  <meta
-    name="twitter:image"
-    content="https://www.blood-fl.shop/images/blood-preview.jpg">
-
-  <!-- Si tienen cuenta oficial de X -->
-  <!--
-  <meta
-    name="twitter:site"
-    content="@TuCuenta">
-  -->
-
-  <!-- Theme Color -->
-
-  <meta
-    name="theme-color"
-    content="#000000">
-
-  <!-- Favicon -->
-
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="favicon.ico">
-
-  <!-- Bootstrap -->
-
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-</head>
-
-<body>
-
-  <app-root></app-root>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+</urlset>   
