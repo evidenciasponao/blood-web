@@ -2,61 +2,196 @@
 
 <img width="1920" height="1080" alt="Blood_banner_rojo_venom" src="https://github.com/user-attachments/assets/d20a1e97-b87b-499a-8b49-fe1bec861e34" />
 
+> Official web platform for **BLØØD | DEATH METAL CO** — E-commerce and band presence built with a modern fullstack architecture.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+🌐 **Live:** [blood-fl.shop](https://blood-fl.shop)
 
-## Development server
+---
 
-To start a local development server, run:
+## 🧱 Tech Stack
+
+### Frontend
+| Technology | Version | Purpose |
+|---|---|---|
+| [Angular](https://angular.dev) | 21.x | Main framework (SPA + SSR) |
+| TypeScript | 5.x | Typed language |
+| Angular CLI | 21.2.11 | Code scaffolding & build |
+| RxJS | 7.x | Reactive HTTP with Observables |
+| Angular HttpClient | — | REST API communication |
+
+### Backend
+| Technology | Version | Purpose |
+|---|---|---|
+| [.NET Core](https://dotnet.microsoft.com) | 8.x | REST API |
+| Entity Framework Core | 8.x | ORM / database mapping |
+| JWT Bearer Auth | — | Authentication & authorization |
+| ASP.NET Core Identity | — | User management |
+
+### Database
+| Technology | Purpose |
+|---|---|
+| Azure SQL Server | Cloud relational database |
+| EF Core Migrations | Schema versioning |
+
+### Infrastructure & DevOps
+| Service | Purpose |
+|---|---|
+| Azure Static Web Apps | Angular hosting |
+| Azure App Service | .NET API hosting |
+| Azure SQL Database | Managed cloud database |
+| GitHub Actions | CI/CD pipeline (auto deploy on push) |
+| Custom Domain | `blood-fl.shop` with DNS on Azure |
+
+---
+
+## 🗂️ Project Structure
+
+```
+blood-web/                        # Angular Frontend
+└── src/
+    └── app/
+        └── core/
+            ├── models/
+            │   └── product.model.ts      # Product interface
+            └── services/
+                └── product.service.ts    # HTTP calls to the API
+        ├── app.routes.ts                 # Route definitions
+        ├── app.config.ts                 # App configuration
+        ├── app.config.server.ts          # SSR configuration
+        └── main.server.ts                # SSR entry point
+
+BloodFl.API/                      # .NET Core Backend
+├── Controllers/
+│   ├── AuthController.cs         # Login & JWT generation
+│   └── ProductsController.cs     # Product CRUD endpoints
+├── Models/
+│   ├── Product.cs                # Product entity
+│   └── User.cs                   # User entity
+├── DTOs/
+│   ├── LoginDto.cs               # Login request shape
+│   ├── ProductDto.cs             # Product creation shape
+│   └── ProductResponseDto.cs     # Product response shape
+├── Data/
+│   └── AppDbContext.cs           # EF Core database context
+└── Services/
+    └── AuthService.cs            # JWT logic
+```
+
+---
+
+## 🔐 Authentication Flow
+
+```
+1. POST /api/auth/login  ← { email, password }
+2. API validates against SQL Server
+3. Returns signed JWT token
+4. Angular stores token & sends it in every protected request:
+   Authorization: Bearer <token>
+5. API validates token and allows or rejects the request
+```
+
+---
+
+## 🌐 API Communication
+
+Angular calls the backend via `HttpClient` in `product.service.ts`:
+
+```
+[Angular SPA] ──GET /api/products──► [.NET Core API] ──► [Azure SQL Server]
+                ◄── JSON response ──
+```
+
+Key endpoints:
+
+| Method | Endpoint | Auth | Description |
+|---|---|---|---|
+| GET | `/api/products` | Public | Get all products |
+| POST | `/api/products` | 🔒 JWT | Create a product |
+| PUT | `/api/products/{id}` | 🔒 JWT | Update a product |
+| DELETE | `/api/products/{id}` | 🔒 JWT | Delete a product |
+| POST | `/api/auth/login` | Public | Login & get token |
+
+---
+
+## 🚀 CI/CD Pipeline
+
+Every push to `main` triggers the GitHub Actions workflow:
+
+```
+git push → GitHub Actions → Build Angular → Deploy to Azure Static Web Apps
+                          → Build .NET   → Deploy to Azure App Service
+```
+
+---
+
+## 💻 Local Development
+
+### Prerequisites
+- Node.js 20+
+- Angular CLI: `npm install -g @angular/cli`
+- .NET SDK 8+
+
+### Frontend
 
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
 ng serve
+# → http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Backend
 
 ```bash
+# Restore packages
+dotnet restore
+
+# Apply migrations
+dotnet ef database update
+
+# Run API
+dotnet run
+# → https://localhost:5001
+```
+
+---
+
+## 🛠️ Angular CLI Commands
+
+```bash
+# Generate a new component
 ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+# Build for production
+ng build
 
-```bash
+# Run unit tests (Vitest)
+ng test
+
+# Run e2e tests
+ng e2e
+
+# See all available schematics
 ng generate --help
 ```
 
-## Building
+---
 
-To build the project run:
+## 📦 Products (Current Merch)
 
-```bash
-ng build
-```
+| Product | Price |
+|---|---|
+| Blood Black Edition | COP $70,000 |
+| Blood Death Edition | COP $70,000 |
+| Blood Legacy | COP $70,000 |
+| Blood White Edition | COP $70,000 |
+| Blood Red Logo | COP $70,000 |
+| Gorra Blood Legacy | COP $50,000 |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📄 License
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 BLØØD | DEATH METAL CO — All rights reserved.
